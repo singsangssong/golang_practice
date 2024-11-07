@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  app:
+    image: gotodo
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        target: dev
+    volumes:
+      - .:/app
+    ports:
+      - "18000:80"
